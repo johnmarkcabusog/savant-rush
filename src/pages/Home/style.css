@@ -1,0 +1,75 @@
+.main-panel{
+    display: flex;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;;
+}
+.game-board{
+    width: 60%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    font-weight:bold
+}
+.game-board > div:first-child{
+    color: #00a651;
+    font-size: 50px;
+}
+.game-board > div:nth-child(2){
+    color: #464646;
+    font-size: 30px;
+
+}
+.game-board > div:last-child{
+    color: yellow;
+    padding: 10% 0% 10% 0%;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    grid-template-rows: repeat(6, 60px);
+    gap: 10px;
+}
+
+.tile{
+    background-color: #464646;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.tile:hover{
+    font-size: 40px;
+    color: whitesmoke;
+    background-color:#00a651 ;
+}
+
+.clue-board{
+    width: 40%;
+    background-color: #00a651;
+    border-left: 30px solid #82e9a5;
+
+}
+.tile-answer{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.tile-answer-item{
+    width: 70px;
+    height: 70px;
+    background-color: #82e9a5;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
