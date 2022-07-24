@@ -3,7 +3,8 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content:  flex-end;
+    overflow-y: scroll;
 }
 .clues{
     color:whitesmoke;
@@ -45,8 +46,22 @@
 }
 .clue-header{
     color:whitesmoke;
-    padding-top: 5%;
-    padding-bottom: 5%;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
+    padding-top: 10px;
+    text-align: center;
+    position: fixed;
+    top:0
+}
+
+.hidden-defs{
+    width: 50%;
+    background-color: aliceblue;
+    height: 20px;
+    margin-top: 8px;
+    opacity: 0.5;
+}
+.word-def{
+    padding-top: 10px;
+    display: inline-block;
 }
