@@ -50,9 +50,9 @@ const Home = () => {
         removeAllSelectedClass(userAnswer);
       }
     }
-  }, [userAnswer]);
+  }, [userAnswer,correctAnswers, wordsToGuess]);
 
-
+  console.log("gameee over", gameOver )
   // only trigger tile color updates for correct answer tiles
   useEffect(()=>{
     correctAnswers.forEach((x, index)=>{
