@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 const Timer = ({setGameOver}) => {
-  const [timer, setTimer] = useState(5); // 5 minutes
+  const [timer, setTimer] = useState(300); // 5 minutes
   useEffect(() => {
     const interval = setInterval(() => {
       if (timer > 0) {
