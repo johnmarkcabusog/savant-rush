@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .clues{
     color:whitesmoke;
@@ -15,7 +15,38 @@
     flex-direction: column;
     gap: 10px;
 }
-.clues > div:first-child{
+.word-name{
     font-weight: bold;
     font-size: 20px;
+    flex-grow: 1;
+}
+.show-clue-but{
+    flex-grow: 1;
+    /* background-color: aliceblue; */
+    /* text-align: end; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.show-clue-but > span{
+    background-color: #00B75A;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.definition{
+    font-style: italic;
+    padding: 10px 0px 0px 20px;
+}
+
+.word-header{
+    display: flex;
+}
+.clue-header{
+    color:whitesmoke;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-weight: bold;
+    font-size: 40px;
 }
