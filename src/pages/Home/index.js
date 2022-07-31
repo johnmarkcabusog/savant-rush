@@ -106,7 +106,7 @@ const Home = () => {
         </div>
       </div>
       <div className="clue-board">
-        <ClueBoard wordsToGuess={wordsToGuess} gameOver={gameOver} setTheWordsToGuess={setTheWordsToGuess} />
+        <ClueBoard wordsToGuess={wordsToGuess} gameOver={gameOver} setTheWordsToGuess={setTheWordsToGuess} correctAnswers={correctAnswers}/>
       </div>
     </div>
   );
