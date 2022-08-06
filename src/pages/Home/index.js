@@ -34,7 +34,7 @@ const Home = () => {
   const [userAnswer, setUserAnswer] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState([]);
   const [gameOver, setGameOver] = useState(false);
-
+  
   useEffect(() => {
     if (wordsToGuess.length === 0) {
       const fetchData = async () => {
@@ -99,6 +99,7 @@ const Home = () => {
             combinedString={boardLetters}
             setUserAnswer={setUserAnswer}
             userAnswer={userAnswer}
+            correctAnswers={correctAnswers}
           />
         </div>
         <div className="tile-answer">
@@ -106,7 +107,12 @@ const Home = () => {
         </div>
       </div>
       <div className="clue-board">
-        <ClueBoard wordsToGuess={wordsToGuess} gameOver={gameOver} setTheWordsToGuess={setTheWordsToGuess} correctAnswers={correctAnswers}/>
+        <ClueBoard
+          wordsToGuess={wordsToGuess}
+          gameOver={gameOver}
+          setTheWordsToGuess={setTheWordsToGuess}
+          correctAnswers={correctAnswers}
+        />
       </div>
     </div>
   );
