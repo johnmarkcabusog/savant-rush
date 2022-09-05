@@ -6,6 +6,7 @@ import Timer from "./Timer";
 import TileAnswer from "./TileAnswer";
 import Tiles from "./Tiles";
 import ClueBoard from "./ClueBoard";
+import { getRandomTwoLetters } from "./constant";
 
 const massageData = (data) => {
   let massagedData = data.map((data) => {
@@ -34,18 +35,26 @@ const Home = () => {
   const [userAnswer, setUserAnswer] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState([]);
   const [gameOver, setGameOver] = useState(false);
-  
+
   useEffect(() => {
     if (wordsToGuess.length === 0) {
       const fetchData = async () => {
+        const letters = getRandomTwoLetters();
         const { data } = await axios.get(
-          "https://api.datamuse.com/words?sp=??????&md=d&max=5"
+          `https://api.datamuse.com/words?sp=${letters[0]}????${letters[1]}&md=d&max=5`
         );
-        const words = data.map((x) => x.word);
-        const combinedString = combineString(words); //combine strings to attach each letter to the tiles
-        const shuffledcombinedString = shuffle(combinedString.split(""));
-        setBoardLetters(shuffledcombinedString);
-        setTheWordsToGuess(massageData(data));
+        const words = data
+          .filter((d) => d !== null && d.hasOwnProperty("defs"))
+          .map((x) => x.word);
+
+        if (words.length < 5) {
+          fetchData();
+        } else {
+          const combinedString = combineString(words); //combine strings to attach each letter to the tiles
+          const shuffledcombinedString = shuffle(combinedString.split(""));
+          setBoardLetters(shuffledcombinedString);
+          setTheWordsToGuess(massageData(data));
+        }
       };
 
       fetchData();
