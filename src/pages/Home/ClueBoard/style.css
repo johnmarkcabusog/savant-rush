@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    justify-content:  flex-end;
+    justify-content:  flex-start;
     overflow-y: scroll;
 }
 .clues{
@@ -52,10 +52,8 @@
     color:whitesmoke;
     font-weight: bold;
     font-size: 30px;
-    padding-top: 10px;
+    padding: 40px;
     text-align: center;
-    position: fixed;
-    top:0
 }
 
 .hidden-defs{

@@ -35,6 +35,7 @@ const Home = () => {
   const [userAnswer, setUserAnswer] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState([]);
   const [gameOver, setGameOver] = useState(false);
+  const [showClue, setShowClue] = useState(0);
 
   useEffect(() => {
     if (wordsToGuess.length === 0) {
@@ -102,7 +103,11 @@ const Home = () => {
     <div className="main-panel">
       <div className="game-board">
         <div>Savant Rush</div>
-        <Timer setGameOver={setGameOver} />
+        <Timer
+          setGameOver={setGameOver}
+          showClue={showClue}
+          setShowClue={setShowClue}
+        />
         <div className="board">
           <Tiles
             combinedString={boardLetters}
@@ -121,6 +126,8 @@ const Home = () => {
           gameOver={gameOver}
           setTheWordsToGuess={setTheWordsToGuess}
           correctAnswers={correctAnswers}
+          setShowClue={setShowClue}
+          showClue={showClue}
         />
       </div>
     </div>
